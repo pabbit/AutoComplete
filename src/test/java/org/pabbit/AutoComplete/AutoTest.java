@@ -19,7 +19,7 @@ public class AutoTest
 	
 	public AutoTest()
 	{
-		t_auto = new Autocomplete<>();
+		t_auto = new AutocompleteCount<>();
 	}
 	
 	public void putDictionary() throws Exception
@@ -80,12 +80,21 @@ public class AutoTest
 		for(int i = 0; i < cand.size(); i++)
 			System.out.print(cand.get(i)+ " ");
 		
-//		System.out.println("\n----------------------------------------------------");		
-//		
-//		t_auto.pickCandidate("girl", "girly");
-//		cand = t_auto.getCandidates("girl");
-//
-//		for(int i = 0; i < cand.size(); i++)
-//			System.out.print(cand.get(i)+ " ");
+		System.out.println("\n----------------------------------------------------");		
+		
+		t_auto.pickCandidate("girl", "girly");
+		cand = t_auto.getCandidates("girl");
+
+		for(int i = 0; i < cand.size(); i++)
+			System.out.print(cand.get(i)+ " ");
+		
+		System.out.println("\n----------------------------------------------------");		
+
+		t_auto.pickCandidate("girl", "girl");
+		cand = t_auto.getCandidates("girl");
+
+		for(int i = 0; i < cand.size(); i++)
+			System.out.print(cand.get(i)+ " ");
+
 	}
 }

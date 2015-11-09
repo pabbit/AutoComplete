@@ -58,7 +58,6 @@ public class Autocomplete<T> extends Trie<T> implements IAutocomplete<T>
 	public List<String> findCandidates(String prefix, List<String> list)
 	{
 		TrieNode<T> node = find(prefix);
-//		if(node == null) setPrefix(node, prefix);
 		
 		Map<Character,TrieNode<T>> map;
 		Queue<nodePair> queue = new LinkedList<nodePair>();
@@ -151,6 +150,7 @@ public class Autocomplete<T> extends Trie<T> implements IAutocomplete<T>
 	
 	private class TimeComparator implements Comparator<myPair>
 	{
+		@Override
 		public int compare(myPair a, myPair b)
 		{
 			return b.getTimes().compareTo(a.getTimes());
